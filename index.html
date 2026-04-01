@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IIWB WIKI 2008 - Official Totally Real Database</title>
+  <meta name="description" content="A fake old-school 2008-style IIWB WIKI page for April Fools with a Spy Detector." />
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      background: #003366 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><rect width="80" height="80" fill="%23003366"/><circle cx="10" cy="10" r="1.8" fill="white" opacity="0.7"/><circle cx="35" cy="17" r="1.3" fill="white" opacity="0.6"/><circle cx="61" cy="9" r="1.5" fill="white" opacity="0.8"/><circle cx="17" cy="39" r="1.2" fill="white" opacity="0.65"/><circle cx="55" cy="44" r="1.6" fill="white" opacity="0.75"/><circle cx="74" cy="65" r="1.1" fill="white" opacity="0.75"/><circle cx="27" cy="63" r="1.5" fill="white" opacity="0.72"/></svg>') repeat;
+    }
+
+    a { color: #0033cc; }
+    a:hover { color: #ff3300; }
+
+    .page {
+      width: 960px;
+      margin: 0 auto;
+      background: #d7e9ff;
+      border-left: 4px solid #8bbcff;
+      border-right: 4px solid #8bbcff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.45);
+      position: relative;
+    }
+
+    .topbar {
+      background: linear-gradient(#004ea1, #002f6d);
+      color: white;
+      padding: 8px 12px;
+      border-bottom: 3px solid #ffd200;
+      font-size: 12px;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .blink { animation: blink 1s steps(2, start) infinite; }
+    @keyframes blink { to { visibility: hidden; } }
+
+    .header {
+      background: linear-gradient(#88c6ff, #2f78d8 60%, #1f59a8);
+      color: #fff;
+      border-bottom: 4px ridge #d8ecff;
+      padding: 12px;
+    }
+
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .logo-cell {
+      width: 120px;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    .logo-box {
+      display: inline-block;
+      padding: 6px;
+      background: #ffffff;
+      border: 3px outset #c7ddff;
+    }
+
+    .logo-box img {
+      width: 88px;
+      height: 88px;
+      object-fit: cover;
+      display: block;
+      image-rendering: auto;
+    }
+
+    .title-cell {
+      vertical-align: top;
+      padding-left: 12px;
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 38px;
+      font-weight: bold;
+      text-shadow: 2px 2px 0 #123c78, 4px 4px 0 rgba(0,0,0,0.18);
+      letter-spacing: 1px;
+    }
+
+    .site-subtitle {
+      margin-top: 4px;
+      font-size: 14px;
+      color: #eef7ff;
+      font-weight: bold;
+    }
+
+    .stamp {
+      display: inline-block;
+      margin-top: 8px;
+      background: #fff7b2;
+      color: #8a0000;
+      border: 2px dashed #d10000;
+      padding: 4px 8px;
+      font-weight: bold;
+      transform: rotate(-2deg);
+    }
+
+    .marquee-bar {
+      background: #001f4d;
+      color: #ffff00;
+      border-top: 2px solid #8dc2ff;
+      border-bottom: 2px solid #8dc2ff;
+      padding: 4px 0;
+      font-weight: bold;
+    }
+
+    .nav {
+      background: #c8defa;
+      border-top: 3px ridge #fff;
+      border-bottom: 3px ridge #8fbaf3;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .nav a {
+      display: inline-block;
+      margin: 4px 6px;
+      padding: 6px 12px;
+      text-decoration: none;
+      color: #003399;
+      background: linear-gradient(#ffffff, #d8e8ff);
+      border: 2px outset #f0f7ff;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .nav a:hover {
+      background: linear-gradient(#fff7ae, #ffd861);
+      color: #7a1000;
+    }
+
+    .layout {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      background: #eaf4ff;
+    }
+
+    .sidebar, .content {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .sidebar {
+      width: 230px;
+      background: #d9ebff;
+      border-right: 3px solid #9fc3f2;
+      padding: 10px;
+    }
+
+    .content {
+      padding: 10px;
+    }
+
+    .box {
+      background: #ffffff;
+      border: 3px outset #d5e6ff;
+      margin-bottom: 12px;
+    }
+
+    .box-title {
+      background: linear-gradient(#4ea7ff, #1560b8);
+      color: #fff;
+      font-weight: bold;
+      padding: 6px 8px;
+      font-size: 14px;
+      border-bottom: 2px solid #a9d2ff;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.35);
+    }
+
+    .box-body {
+      padding: 10px;
+      line-height: 1.45;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 6px;
+      background: #000;
+      color: #00ff66;
+      font-family: "Courier New", monospace;
+      font-size: 11px;
+      border: 2px inset #3a3a3a;
+    }
+
+    .hero {
+      background: linear-gradient(#ffffff, #d6ebff);
+      border: 3px groove #c3dcff;
+      padding: 12px;
+    }
+
+    .hero h2 {
+      margin: 0 0 6px;
+      font-size: 28px;
+      color: #083e81;
+    }
+
+    .hero p {
+      margin: 8px 0;
+    }
+
+    .old-button {
+      display: inline-block;
+      margin: 6px 6px 0 0;
+      padding: 7px 12px;
+      background: linear-gradient(#fff, #d7e6ff);
+      border: 2px outset #fff;
+      text-decoration: none;
+      color: #002d77;
+      font-weight: bold;
+    }
+
+    .old-button:hover { background: linear-gradient(#fff7aa, #ffd76c); }
+
+    .warning {
+      margin-top: 10px;
+      padding: 8px;
+      background: #fff6c9;
+      border: 2px dashed #cc0000;
+      color: #6d0000;
+      font-weight: bold;
+    }
+
+    .article h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #0c4d96;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: #666;
+      margin: 4px 0 10px;
+    }
+
+    .article img.portrait {
+      float: right;
+      width: 180px;
+      max-width: 42%;
+      margin: 0 0 10px 12px;
+      border: 4px ridge #c7ddff;
+      background: #fff;
+      padding: 4px;
+      box-sizing: border-box;
+      image-rendering: auto;
+    }
+
+    .quote {
+      margin: 10px 0;
+      padding: 8px 10px;
+      background: #eef7ff;
+      border-left: 5px solid #4f93dd;
+      font-style: italic;
+    }
+
+    .stats-table,
+    .char-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-top: 8px;
+    }
+
+    .stats-table th, .stats-table td,
+    .char-table th, .char-table td {
+      border: 1px solid #8fb9ed;
+      padding: 7px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .stats-table th,
+    .char-table th {
+      background: #cfe4ff;
+      color: #073b78;
+    }
+
+    .mini-counter {
+      font-family: "Courier New", monospace;
+      font-size: 24px;
+      background: #000;
+      color: #00ff7b;
+      display: inline-block;
+      padding: 6px 10px;
+      border: 3px inset #555;
+      letter-spacing: 3px;
+    }
+
+    .center { text-align: center; }
+
+    .footer {
+      background: #0e3972;
+      color: #fff;
+      padding: 14px;
+      text-align: center;
+      border-top: 4px ridge #9cc4ff;
+      font-size: 12px;
+    }
+
+    .footer img {
+      width: 88px;
+      height: 31px;
+      margin: 3px;
+      vertical-align: middle;
+    }
+
+    .floating-gif {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 10;
+      background: #fff9cc;
+      color: #7a0000;
+      border: 3px ridge #ffe26a;
+      padding: 8px 10px;
+      font-weight: bold;
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
+      animation: bob 1.8s ease-in-out infinite;
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .modal.hidden { display: none; }
+
+    body.modal-open { overflow: hidden; }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 16px;
+    }
+
+    .modal-card {
+      width: 520px;
+      max-width: 100%;
+      background: #dcecff;
+      border: 4px outset #f2f8ff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.45);
+    }
+
+    .modal-top {
+      background: linear-gradient(#0068d6, #004193);
+      color: #fff;
+      padding: 8px 10px;
+      font-weight: bold;
+      font-size: 14px;
+      border-bottom: 2px solid #9bc8ff;
+    }
+
+    .modal-body {
+      padding: 14px;
+      background: #eef6ff;
+    }
+
+    .detector-bar {
+      width: 100%;
+      height: 18px;
+      background: #fff;
+      border: 2px inset #c9dfff;
+      margin: 10px 0 12px;
+      overflow: hidden;
+    }
+
+    .detector-fill {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, #00d200, #ffef00, #ff3c00);
+      animation: scan 2.2s linear infinite;
+    }
+
+    @keyframes scan {
+      0% { width: 0; }
+      50% { width: 100%; }
+      100% { width: 0; }
+    }
+
+    .checklist label {
+      display: block;
+      margin: 6px 0;
+    }
+
+    .detector-result {
+      font-weight: bold;
+      color: #8b0000;
+      background: #fff2ba;
+      border: 2px dashed #c67b00;
+      padding: 8px;
+      margin-top: 10px;
+      min-height: 20px;
+    }
+
+    .detector-result.ok {
+      color: #005f2c;
+      background: #dffff0;
+      border-color: #00a455;
+    }
+
+    .modal-buttons {
+      text-align: right;
+      margin-top: 12px;
+    }
+
+    .modal-buttons button {
+      padding: 7px 13px;
+      margin-left: 8px;
+      border: 2px outset #fff;
+      background: linear-gradient(#ffffff, #dce8ff);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .secret {
+      display: none;
+      margin-top: 10px;
+      padding: 8px;
+      background: #dffff0;
+      border: 2px solid #00aa4d;
+      color: #005f2c;
+      font-weight: bold;
+    }
+
+    .under-construction {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #7c0000;
+    }
+
+    @media (max-width: 980px) {
+      .page { width: 100%; border: none; }
+      .layout, .sidebar, .content { display: block; width: auto; }
+      .article img.portrait { float: none; display: block; margin: 0 auto 10px; }
+      .header-table, .header-table tr, .header-table td { display: block; width: 100%; }
+      .logo-cell { margin-bottom: 10px; }
+      .site-title { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="modal" id="spyModal">
+    <div class="modal-card">
+      <div class="modal-top">IIWB Security Suite 2008 - Spy Detector Verification</div>
+      <div class="modal-body">
+        <p><strong>WARNING:</strong> Before entering the IIWB WIKI, you must prove that you are <u>not a spy</u>, <u>not a suspicious noob</u>, and <u>not secretly working for the snack-stealing department</u>.</p>
+        <div class="detector-bar"><div class="detector-fill"></div></div>
+        <div class="checklist">
+          <label><input type="checkbox" id="humanCheck"> I am not a spy.</label>
+          <label><input type="checkbox" id="colaCheck"> I will not steal Albert's Bloxy Cola stock.</label>
+          <label><input type="checkbox" id="reactorCheck"> I promise not to press random reactor buttons for fun.</label>
+        </div>
+        <div class="detector-result" id="resultText">Current result: highly suspicious until proven funny.</div>
+        <div style="margin-top:8px;font-size:12px;color:#003d7a;"><strong>Tip:</strong> Check every box, then click <em>Verify Innocence</em>.</div>
+        <div class="secret" id="secretText">Spy Detector result accepted. Access granted to the Totally Reliable IIWB Archives.</div>
+        <div class="modal-buttons">
+          <button type="button" id="denyBtn">Admit I Am A Spy</button>
+          <button type="button" id="verifyBtn">Verify Innocence</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="floating-gif blink">! HOT GOSSIP INSIDE !</div>
+
+  <div class="page">
+    <div class="topbar">
+      BEST VIEWED IN 1024x768 • INTERNET EXPLORER ENERGY • LAST UPDATED: APRIL 1, 2008-ish • <span class="blink">SUPER OFFICIAL</span>
+    </div>
+
+    <div class="header">
+      <table class="header-table">
+        <tr>
+          <td class="logo-cell">
+            <div class="logo-box">
+              <img src="assets/logo.png" alt="IIWB WIKI logo" />
+            </div>
+          </td>
+          <td class="title-cell">
+            <h1 class="site-title">IIWB WIKI</h1>
+            <div class="site-subtitle">Official Totally Serious Encyclopedia of Important Nonsense</div>
+            <div class="stamp">TRUSTED BY 97% OF REACTORS*</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="marquee-bar">
+      <marquee behavior="scroll" direction="left" scrollamount="5">BREAKING NEWS: Reactor remains dramatic • Ollie still appears in Classic Mines and acts like this is normal • Albert allegedly sold one Bloxy Cola every 3.2 seconds • Spy Detector upgraded from suspicious to slightly less suspicious •</marquee>
+    </div>
+
+    <div class="nav">
+      <a href="#home">Home</a>
+      <a href="#reactor">Reactor</a>
+      <a href="#ollie">Ollie</a>
+      <a href="#albert">Albert</a>
+    </div>
+
+    <div class="layout">
+      <div class="sidebar">
+        <div class="box">
+          <div class="box-title">Visitor Counter</div>
+          <div class="box-body center">
+            <div class="mini-counter" id="counter">003102</div>
+            <div style="margin-top:8px;">real visitors, fake science</div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">Site Status</div>
+          <div class="box-body">
+            <div class="badge-row">
+              <span class="badge">REACTOR: MOODY</span>
+              <span class="badge">SPY ALERT: MEDIUM</span>
+              <span class="badge">COLA: IN STOCK</span>
+              <span class="badge">WIKI: LOUD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">Quick Facts</div>
+          <div class="box-body">
+            <ul>
+              <li>IIWB is 12% lore and 88% dramatic confidence.</li>
+              <li>Noob-level explanations may occur at any time.</li>
+              <li>This wiki is powered by mystery and old gradients.</li>
+              <li>Every article has been reviewed by absolutely nobody.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">Official Buttons</div>
+          <div class="box-body center">
+            <img alt="fake web button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23002255'/><rect x='1' y='1' width='86' height='29' fill='%23004499' stroke='white'/><text x='44' y='20' font-size='12' text-anchor='middle' fill='white' font-family='Verdana'>IIWB WIKI</text></svg>' />
+            <img alt="fake web button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23550000'/><rect x='1' y='1' width='86' height='29' fill='%23b80000' stroke='%23fff59d'/><text x='44' y='20' font-size='12' text-anchor='middle' fill='%23fff59d' font-family='Verdana'>NO SPIES</text></svg>' />
+            <img alt="fake web button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23004400'/><rect x='1' y='1' width='86' height='29' fill='%2300a050' stroke='white'/><text x='44' y='20' font-size='11' text-anchor='middle' fill='white' font-family='Verdana'>BLOXY COLA</text></svg>' />
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">Image Note</div>
+          <div class="box-body">
+            Real images are now installed. If you update them later, just replace the files in the <code>assets</code> folder.
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="hero" id="home">
+          <h2>Welcome to the most trustworthy IIWB archive on the internet.</h2>
+          <p>This website has the exact energy of a 2008 fan wiki that somehow survived every redesign trend. It is old, loud, slightly dramatic, and completely ready for April Fools.</p>
+          <p>
+            <a class="old-button" href="#reactor">Read reactor facts</a>
+            <a class="old-button" href="#ollie">Meet Ollie</a>
+            <a class="old-button" href="#albert">Meet Albert</a>
+          </p>
+          <div class="warning">Warning: some facts on this page may have been approved by a machine that runs on jokes, blue gradients, and Bloxy Cola.</div>
+        </div>
+
+        <div class="box article" id="reactor">
+          <div class="box-title">Article: The Reactor</div>
+          <div class="box-body">
+            <h3>The Reactor</h3>
+            <div class="meta">Category: Important glowing machinery • Status: dramatic • Danger level: yes</div>
+            <p>The reactor is the beating, blinking, overreacting heart of the IIWB experience. It does not simply <em>exist</em>. It performs. Sometimes it glows like a proud science project, and sometimes it behaves like it just read terrible news.</p>
+            <div class="quote">"The reactor is perfectly safe," said somebody, moments before it started making a very concerning noise.</div>
+            <p>According to highly reliable hallway rumors, the reactor can sense three things: nearby chaos, bad engineering decisions, and people who say "what does this button do?" with too much confidence.</p>
+            <table class="stats-table">
+              <tr><th>Property</th><th>Official value</th></tr>
+              <tr><td>Power source</td><td>Science, panic, and suspiciously bright lights</td></tr>
+              <tr><td>Main hobby</td><td>Looking cool while worrying everyone</td></tr>
+              <tr><td>Biggest weakness</td><td>Random interns and curiosity</td></tr>
+              <tr><td>Common symptom</td><td>Making players feel like something important is about to happen</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="box article" id="ollie">
+          <div class="box-title">Article: Ollie</div>
+          <div class="box-body">
+            <img class="portrait" src="assets/ollie.png" alt="Ollie portrait" />
+            <h3>Ollie</h3>
+            <div class="meta">Category: Character • Known from: Classic Mines</div>
+            <p>Ollie is the kind of character who appears in <strong>Classic Mines</strong> and instantly gives the impression that he knows exactly where all the trouble is hidden. Whether he is exploring, surviving, or just standing there like a legend, he brings classic energy to the scene.</p>
+            <p>His public image can best be described as: "calm on the outside, probably hearing cave noises on the inside." Fans believe he is either extremely brave or simply too used to the weirdness.</p>
+            <table class="char-table">
+              <tr><th>Trait</th><th>Description</th></tr>
+              <tr><td>Vibe</td><td>Classic adventure with a side of mystery</td></tr>
+              <tr><td>Best known for</td><td>Showing up in Classic Mines like the cave personally invited him</td></tr>
+              <tr><td>Rumored skill</td><td>Knowing the difference between normal rocks and story-important rocks</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="box article" id="albert">
+          <div class="box-title">Article: Albert</div>
+          <div class="box-body">
+            <img class="portrait" src="assets/albert.png" alt="Albert portrait" />
+            <h3>Albert</h3>
+            <div class="meta">Category: Character • Known from: Sea Journey • Side business: Bloxy Cola distribution</div>
+            <p>Albert is the iconic Bloxy Cola seller from <strong>Sea Journey</strong> and the brother of Ollie. While some characters seek adventure, Albert seeks customers, stock efficiency, and maximum cola-based happiness.</p>
+            <p>He has the energy of a man who could sell a cold drink during a storm and somehow make it sound like a premium lifestyle upgrade. If you hear a cheerful sales pitch near the sea, there is a strong chance Albert is nearby.</p>
+            <div class="quote">"One Bloxy Cola for you, one Bloxy Cola for the journey, and one emergency Bloxy Cola just in case." - Albert, definitely</div>
+            <p>Many believe Albert's true superpower is running a refreshment business in locations where the weather, the map, and common sense all try to say no.</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">Rumor Board</div>
+          <div class="box-body">
+            <ul>
+              <li>The reactor once judged a player silently.</li>
+              <li>Albert has a secret premium cola speech for VIP customers.</li>
+              <li>Ollie has looked at one rock in Classic Mines for so long that people assume it matters.</li>
+              <li>The Spy Detector secretly runs on panic and old internet graphics.</li>
+            </ul>
+            <div class="under-construction blink">UNDER CONSTRUCTION • MORE VERY IMPORTANT LORE COMING SOON • UNDER CONSTRUCTION</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>IIWB WIKI © 2008-forever • This site is a joke project for April Fools and should not be used as legal reactor guidance.</div>
+      <div style="margin-top:8px;">
+        <img alt="button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23004c93'/><rect x='1' y='1' width='86' height='29' fill='%230066cc' stroke='white'/><text x='44' y='20' font-size='11' text-anchor='middle' fill='white' font-family='Verdana'>OLD WEB</text></svg>' />
+        <img alt="button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23660000'/><rect x='1' y='1' width='86' height='29' fill='%23a80000' stroke='white'/><text x='44' y='20' font-size='11' text-anchor='middle' fill='white' font-family='Verdana'>APRIL FOOLS</text></svg>' />
+        <img alt="button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23005522'/><rect x='1' y='1' width='86' height='29' fill='%23008a3c' stroke='white'/><text x='44' y='20' font-size='11' text-anchor='middle' fill='white' font-family='Verdana'>SPY CHECK</text></svg>' />
+      </div>
+    </div>
+  </div>
+
+    <script>
+    const modal = document.getElementById('spyModal');
+    const verifyBtn = document.getElementById('verifyBtn');
+    const denyBtn = document.getElementById('denyBtn');
+    const resultText = document.getElementById('resultText');
+    const secretText = document.getElementById('secretText');
+    const humanCheck = document.getElementById('humanCheck');
+    const colaCheck = document.getElementById('colaCheck');
+    const reactorCheck = document.getElementById('reactorCheck');
+    const counter = document.getElementById('counter');
+    const checks = [humanCheck, colaCheck, reactorCheck];
+
+    document.body.classList.add('modal-open');
+
+    function randomCount() {
+      const base = 3102 + Math.floor(Math.random() * 700);
+      counter.textContent = String(base).padStart(6, '0');
+    }
+    randomCount();
+
+    function checkedCount() {
+      return checks.filter(el => el.checked).length;
+    }
+
+    function updateResult() {
+      const checked = checkedCount();
+      resultText.classList.remove('ok');
+      if (checked === 0) {
+        resultText.textContent = 'Current result: highly suspicious until proven funny.';
+      } else if (checked < 3) {
+        resultText.textContent = 'Current result: partial innocence detected. Continue proving your loyalty.';
+      } else {
+        resultText.textContent = 'Current result: spy levels reduced to acceptable joke standards.';
+        resultText.classList.add('ok');
+      }
+    }
+
+    checks.forEach(el => el.addEventListener('change', updateResult));
+    updateResult();
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.classList.remove('modal-open');
+    }
+
+    verifyBtn.addEventListener('click', function () {
+      if (checkedCount() === 3) {
+        secretText.style.display = 'block';
+        resultText.textContent = 'Access approved. The detector believes you are probably harmless.';
+        resultText.classList.add('ok');
+        window.setTimeout(closeModal, 1100);
+      } else {
+        secretText.style.display = 'none';
+        resultText.textContent = 'Verification failed. The detector still suspects you of extremely spy-like behavior.';
+        resultText.classList.remove('ok');
+      }
+    });
+
+    denyBtn.addEventListener('click', function () {
+      resultText.textContent = 'Confession recorded. Please reconsider your life choices and try again.';
+      resultText.classList.remove('ok');
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' && !modal.classList.contains('hidden')) {
+        verifyBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
