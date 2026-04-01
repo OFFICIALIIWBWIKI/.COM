@@ -1,53 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IIWB WIKI 2008 - Official Totally Real Database</title>
-  <meta name="description" content="A fake old-school 2008-style IIWB WIKI page for April Fools with a Spy Detector." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIWB WIKI :: OFFICIAL CLASSIFIED ARCHIVE</title>
+  <meta name="description" content="A funny retro 2008-style IIWB WIKI fansite with a working Spy Detector.">
+  <link rel="icon" type="image/png" href="./IIWB%20LOGO.png">
   <style>
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
+      background: #7aa7e8 url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==') repeat;
+      color: #111;
       font-family: Tahoma, Verdana, Arial, sans-serif;
       font-size: 14px;
-      color: #000;
-      background: #003366 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><rect width="80" height="80" fill="%23003366"/><circle cx="10" cy="10" r="1.8" fill="white" opacity="0.7"/><circle cx="35" cy="17" r="1.3" fill="white" opacity="0.6"/><circle cx="61" cy="9" r="1.5" fill="white" opacity="0.8"/><circle cx="17" cy="39" r="1.2" fill="white" opacity="0.65"/><circle cx="55" cy="44" r="1.6" fill="white" opacity="0.75"/><circle cx="74" cy="65" r="1.1" fill="white" opacity="0.75"/><circle cx="27" cy="63" r="1.5" fill="white" opacity="0.72"/></svg>') repeat;
     }
-    <img src="assets/logo.png" alt="IIWB LOGO.png">
 
-
-    a { color: #0033cc; }
-    a:hover { color: #ff3300; }
+    a { color: #003cff; }
+    a:hover { color: #ff0000; }
 
     .page {
       width: 960px;
       margin: 0 auto;
-      background: #d7e9ff;
-      border-left: 4px solid #8bbcff;
-      border-right: 4px solid #8bbcff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.45);
-      position: relative;
+      background: #dfeeff;
+      border-left: 3px solid #173d8b;
+      border-right: 3px solid #173d8b;
+      min-height: 100vh;
+      box-shadow: 0 0 18px rgba(0,0,0,0.35);
     }
 
-    .topbar {
-      background: linear-gradient(#004ea1, #002f6d);
-      color: white;
-      padding: 8px 12px;
-      border-bottom: 3px solid #ffd200;
-      font-size: 12px;
+    .top-strip {
+      background: linear-gradient(#0f3e98, #2d69d5);
+      color: #fff;
       text-align: center;
-      letter-spacing: 0.5px;
+      font-weight: bold;
+      padding: 6px 10px;
+      border-bottom: 3px solid #f5c437;
+      letter-spacing: 1px;
     }
-
-    .blink { animation: blink 1s steps(2, start) infinite; }
-    @keyframes blink { to { visibility: hidden; } }
 
     .header {
-      background: linear-gradient(#88c6ff, #2f78d8 60%, #1f59a8);
-      color: #fff;
-      border-bottom: 4px ridge #d8ecff;
+      background: linear-gradient(#eaf3ff, #b4d2ff);
+      border-bottom: 3px solid #173d8b;
       padding: 12px;
     }
 
@@ -56,675 +49,691 @@
       border-collapse: collapse;
     }
 
-    .logo-cell {
-      width: 120px;
-      text-align: center;
-      vertical-align: top;
+    .header-table td {
+      vertical-align: middle;
     }
 
-    .logo-box {
-      display: inline-block;
-      padding: 6px;
-      background: #ffffff;
-      border: 3px outset #c7ddff;
-    }
-
-    .logo-box img {
-      width: 88px;
-      height: 88px;
-      object-fit: cover;
-      display: block;
+    .main-logo {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      border: 3px solid #173d8b;
+      background: #fff;
       image-rendering: auto;
     }
 
-    .title-cell {
-      vertical-align: top;
-      padding-left: 12px;
+    .spy-stamp {
+      width: 78px;
+      height: 78px;
+      object-fit: contain;
+      border: 3px solid #173d8b;
+      background: #fff;
     }
 
     .site-title {
+      font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+      font-size: 42px;
+      font-weight: bold;
+      color: #0c2f71;
+      text-shadow: 2px 2px 0 #fff, 4px 4px 0 #9ec0ff;
       margin: 0;
-      font-size: 38px;
-      font-weight: bold;
-      text-shadow: 2px 2px 0 #123c78, 4px 4px 0 rgba(0,0,0,0.18);
-      letter-spacing: 1px;
     }
 
-    .site-subtitle {
-      margin-top: 4px;
+    .subtitle {
+      margin-top: 6px;
       font-size: 14px;
-      color: #eef7ff;
+      color: #173d8b;
       font-weight: bold;
     }
 
-    .stamp {
-      display: inline-block;
-      margin-top: 8px;
-      background: #fff7b2;
-      color: #8a0000;
-      border: 2px dashed #d10000;
-      padding: 4px 8px;
-      font-weight: bold;
-      transform: rotate(-2deg);
+    .blink {
+      animation: blink 1s steps(2, start) infinite;
+      color: #cc0000;
     }
 
-    .marquee-bar {
-      background: #001f4d;
-      color: #ffff00;
-      border-top: 2px solid #8dc2ff;
-      border-bottom: 2px solid #8dc2ff;
-      padding: 4px 0;
-      font-weight: bold;
+    @keyframes blink {
+      to { visibility: hidden; }
     }
 
-    .nav {
-      background: #c8defa;
-      border-top: 3px ridge #fff;
-      border-bottom: 3px ridge #8fbaf3;
-      padding: 8px;
+    .menu {
+      background: #17479f;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #062865;
       text-align: center;
+      padding: 8px 0;
     }
 
-    .nav a {
+    .menu a {
       display: inline-block;
-      margin: 4px 6px;
-      padding: 6px 12px;
+      margin: 0 5px;
+      padding: 6px 10px;
+      color: #fff;
       text-decoration: none;
-      color: #003399;
-      background: linear-gradient(#ffffff, #d8e8ff);
-      border: 2px outset #f0f7ff;
       font-weight: bold;
+      background: linear-gradient(#5b91ec, #285fbe);
+      border: 2px outset #b9d1ff;
       font-size: 13px;
     }
 
-    .nav a:hover {
-      background: linear-gradient(#fff7ae, #ffd861);
-      color: #7a1000;
+    .menu a:hover {
+      background: linear-gradient(#fff39c, #f1bd2a);
+      color: #000;
     }
 
-    .layout {
-      display: table;
-      width: 100%;
-      border-collapse: collapse;
-      background: #eaf4ff;
-    }
-
-    .sidebar, .content {
-      display: table-cell;
-      vertical-align: top;
-    }
-
-    .sidebar {
-      width: 230px;
-      background: #d9ebff;
-      border-right: 3px solid #9fc3f2;
-      padding: 10px;
+    .marquee {
+      background: #fff4b0;
+      color: #8a0000;
+      font-weight: bold;
+      border-top: 2px solid #cc9a00;
+      border-bottom: 2px solid #cc9a00;
+      padding: 7px 0;
     }
 
     .content {
-      padding: 10px;
+      padding: 12px;
+    }
+
+    .layout {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 10px;
+    }
+
+    .sidebar,
+    .main,
+    .box {
+      background: #f8fbff;
+      border: 2px solid #17479f;
+    }
+
+    .sidebar {
+      width: 220px;
+      vertical-align: top;
+    }
+
+    .main {
+      vertical-align: top;
     }
 
     .box {
-      background: #ffffff;
-      border: 3px outset #d5e6ff;
       margin-bottom: 12px;
+      background: #f7fbff;
     }
 
     .box-title {
-      background: linear-gradient(#4ea7ff, #1560b8);
+      background: linear-gradient(#2e70db, #17479f);
       color: #fff;
       font-weight: bold;
-      padding: 6px 8px;
-      font-size: 14px;
-      border-bottom: 2px solid #a9d2ff;
-      text-shadow: 1px 1px 0 rgba(0,0,0,0.35);
+      padding: 7px 9px;
+      border-bottom: 2px solid #0d2b66;
+      font-size: 15px;
+      letter-spacing: 0.4px;
     }
 
     .box-body {
       padding: 10px;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .badge {
+    .counter {
       display: inline-block;
-      padding: 4px 6px;
       background: #000;
-      color: #00ff66;
-      font-family: "Courier New", monospace;
-      font-size: 11px;
-      border: 2px inset #3a3a3a;
-    }
-
-    .hero {
-      background: linear-gradient(#ffffff, #d6ebff);
-      border: 3px groove #c3dcff;
-      padding: 12px;
-    }
-
-    .hero h2 {
-      margin: 0 0 6px;
-      font-size: 28px;
-      color: #083e81;
-    }
-
-    .hero p {
-      margin: 8px 0;
-    }
-
-    .old-button {
-      display: inline-block;
-      margin: 6px 6px 0 0;
-      padding: 7px 12px;
-      background: linear-gradient(#fff, #d7e6ff);
-      border: 2px outset #fff;
-      text-decoration: none;
-      color: #002d77;
+      color: #00ff6e;
+      font-family: 'Courier New', monospace;
+      padding: 4px 8px;
       font-weight: bold;
+      border: 2px inset #666;
+      letter-spacing: 2px;
     }
 
-    .old-button:hover { background: linear-gradient(#fff7aa, #ffd76c); }
-
-    .warning {
-      margin-top: 10px;
-      padding: 8px;
-      background: #fff6c9;
-      border: 2px dashed #cc0000;
-      color: #6d0000;
-      font-weight: bold;
+    .mini-logo-grid {
+      text-align: center;
     }
 
-    .article h3 {
-      margin: 0;
-      font-size: 22px;
-      color: #0c4d96;
-    }
-
-    .meta {
-      font-size: 12px;
-      color: #666;
-      margin: 4px 0 10px;
-    }
-
-    .article img.portrait {
-      float: right;
-      width: 180px;
-      max-width: 42%;
-      margin: 0 0 10px 12px;
-      border: 4px ridge #c7ddff;
+    .mini-logo-grid img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      margin: 4px;
+      border: 2px solid #17479f;
       background: #fff;
-      padding: 4px;
-      box-sizing: border-box;
-      image-rendering: auto;
     }
 
-    .quote {
-      margin: 10px 0;
-      padding: 8px 10px;
-      background: #eef7ff;
-      border-left: 5px solid #4f93dd;
-      font-style: italic;
-    }
-
-    .stats-table,
-    .char-table {
+    .hero-table {
       width: 100%;
       border-collapse: collapse;
+    }
+
+    .hero-table td {
+      vertical-align: top;
+      padding: 8px;
+    }
+
+    .hero-logo {
+      width: 135px;
+      border: 3px solid #17479f;
       background: #fff;
+      padding: 4px;
+    }
+
+    .warning {
+      background: #fff2f2;
+      border: 2px dashed #c50000;
+      color: #8b0000;
+      padding: 8px;
+      font-weight: bold;
       margin-top: 8px;
     }
 
-    .stats-table th, .stats-table td,
-    .char-table th, .char-table td {
-      border: 1px solid #8fb9ed;
-      padding: 7px;
-      text-align: left;
+    .fact-list {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    .fact-list li {
+      margin-bottom: 6px;
+    }
+
+    .character-card {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+      background: #ffffff;
+      border: 2px solid #17479f;
+    }
+
+    .character-card td {
+      padding: 10px;
       vertical-align: top;
+      border-top: 1px solid #bfd6ff;
     }
 
-    .stats-table th,
-    .char-table th {
-      background: #cfe4ff;
-      color: #073b78;
+    .character-card .head {
+      background: linear-gradient(#f8fbff, #dbe9ff);
+      color: #12336f;
+      font-weight: bold;
+      font-size: 18px;
+      border-bottom: 2px solid #17479f;
     }
 
-    .mini-counter {
-      font-family: "Courier New", monospace;
-      font-size: 24px;
-      background: #000;
-      color: #00ff7b;
+    .portrait {
+      width: 180px;
+      max-width: 100%;
+      border: 2px solid #17479f;
+      background: #fff;
+      padding: 4px;
+    }
+
+    .spy-art-row {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .spy-art-row img {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      margin: 4px;
+      border: 2px solid #17479f;
+      background: #fff;
+      padding: 3px;
+    }
+
+    .stamp {
       display: inline-block;
-      padding: 6px 10px;
-      border: 3px inset #555;
-      letter-spacing: 3px;
+      margin-top: 6px;
+      padding: 5px 8px;
+      background: #ffe16f;
+      border: 2px solid #aa7900;
+      font-weight: bold;
+      color: #5b4300;
     }
-
-    .center { text-align: center; }
 
     .footer {
-      background: #0e3972;
-      color: #fff;
-      padding: 14px;
       text-align: center;
-      border-top: 4px ridge #9cc4ff;
-      font-size: 12px;
+      background: #143a84;
+      color: #fff;
+      padding: 16px 10px 24px;
+      border-top: 3px solid #f5c437;
+      font-size: 13px;
     }
 
     .footer img {
-      width: 88px;
-      height: 31px;
-      margin: 3px;
-      vertical-align: middle;
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin: 0 4px;
+      background: #fff;
+      border: 2px solid #d7e7ff;
     }
-
-    .floating-gif {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 10;
-      background: #fff9cc;
-      color: #7a0000;
-      border: 3px ridge #ffe26a;
-      padding: 8px 10px;
-      font-weight: bold;
-      box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
-      animation: bob 1.8s ease-in-out infinite;
-    }
-
-    @keyframes bob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    .modal.hidden { display: none; }
-
-    body.modal-open { overflow: hidden; }
 
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.65);
+      background: rgba(0,0,0,0.72);
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 999;
-      padding: 16px;
+      z-index: 9999;
+      padding: 15px;
     }
 
-    .modal-card {
-      width: 520px;
+    .modal.hidden {
+      display: none;
+    }
+
+    .modal-box {
+      width: 640px;
       max-width: 100%;
-      background: #dcecff;
-      border: 4px outset #f2f8ff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.45);
+      background: #eaf3ff;
+      border: 4px solid #173d8b;
+      box-shadow: 0 0 0 4px #fff, 0 0 25px rgba(0,0,0,0.45);
     }
 
-    .modal-top {
-      background: linear-gradient(#0068d6, #004193);
+    .modal-head {
+      background: linear-gradient(#2e70db, #17479f);
       color: #fff;
-      padding: 8px 10px;
+      padding: 10px 12px;
       font-weight: bold;
-      font-size: 14px;
-      border-bottom: 2px solid #9bc8ff;
+      font-size: 20px;
+      border-bottom: 3px solid #0d2b66;
     }
 
     .modal-body {
       padding: 14px;
-      background: #eef6ff;
+      color: #0c2f71;
     }
 
-    .detector-bar {
-      width: 100%;
-      height: 18px;
-      background: #fff;
-      border: 2px inset #c9dfff;
-      margin: 10px 0 12px;
+    .scan-line-box {
+      background: #ffffff;
+      border: 2px solid #17479f;
+      padding: 8px;
+      margin: 10px 0;
+      font-family: 'Courier New', monospace;
+      color: #0d2b66;
+      line-height: 1.6;
+    }
+
+    .scan-label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .bar-wrap {
+      height: 14px;
+      border: 2px inset #8aabe0;
+      background: #dce8ff;
+      margin-bottom: 8px;
       overflow: hidden;
     }
 
-    .detector-fill {
-      width: 0;
+    .bar {
       height: 100%;
-      background: linear-gradient(90deg, #00d200, #ffef00, #ff3c00);
-      animation: scan 2.2s linear infinite;
+      width: 0;
+      background: linear-gradient(90deg, #18b818, #8df58d);
+      animation: load 2s forwards;
     }
 
-    @keyframes scan {
-      0% { width: 0; }
-      50% { width: 100%; }
-      100% { width: 0; }
+    .bar.two { animation-delay: .2s; }
+    .bar.three { animation-delay: .4s; }
+
+    @keyframes load {
+      from { width: 0; }
+      to { width: 100%; }
     }
 
-    .checklist label {
-      display: block;
-      margin: 6px 0;
-    }
-
-    .detector-result {
-      font-weight: bold;
-      color: #8b0000;
-      background: #fff2ba;
-      border: 2px dashed #c67b00;
+    .check-row {
+      margin: 10px 0;
       padding: 8px;
-      margin-top: 10px;
-      min-height: 20px;
+      background: #f7fbff;
+      border: 1px solid #7ea7e9;
     }
 
-    .detector-result.ok {
-      color: #005f2c;
-      background: #dffff0;
-      border-color: #00a455;
+    .check-row label {
+      cursor: pointer;
+      font-weight: bold;
     }
 
     .modal-buttons {
-      text-align: right;
       margin-top: 12px;
     }
 
-    .modal-buttons button {
-      padding: 7px 13px;
-      margin-left: 8px;
-      border: 2px outset #fff;
-      background: linear-gradient(#ffffff, #dce8ff);
+    .retro-btn {
+      padding: 7px 12px;
+      margin-right: 6px;
       font-weight: bold;
+      border: 2px outset #c0d7ff;
+      background: linear-gradient(#fff39c, #f1bd2a);
       cursor: pointer;
+      font-family: Tahoma, Arial, sans-serif;
     }
 
-    .secret {
-      display: none;
+    .retro-btn:hover {
+      filter: brightness(1.05);
+    }
+
+    .retro-btn:active {
+      border-style: inset;
+    }
+
+    .status {
       margin-top: 10px;
       padding: 8px;
-      background: #dffff0;
-      border: 2px solid #00aa4d;
-      color: #005f2c;
+      background: #fff;
+      border: 1px solid #17479f;
       font-weight: bold;
+      color: #0d2b66;
     }
 
-    .under-construction {
-      text-align: center;
-      margin-top: 10px;
-      font-weight: bold;
-      color: #7c0000;
+    .small-note {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #4c5d7e;
     }
 
-    @media (max-width: 980px) {
-      .page { width: 100%; border: none; }
-      .layout, .sidebar, .content { display: block; width: auto; }
-      .article img.portrait { float: none; display: block; margin: 0 auto 10px; }
-      .header-table, .header-table tr, .header-table td { display: block; width: 100%; }
-      .logo-cell { margin-bottom: 10px; }
-      .site-title { font-size: 30px; }
+    @media (max-width: 1000px) {
+      .page {
+        width: 100%;
+        border-left: none;
+        border-right: none;
+      }
+
+      .layout,
+      .header-table,
+      .hero-table,
+      .character-card {
+        display: block;
+      }
+
+      .layout > tbody > tr,
+      .layout > tbody > tr > td,
+      .header-table > tbody > tr,
+      .header-table > tbody > tr > td,
+      .hero-table > tbody > tr,
+      .hero-table > tbody > tr > td,
+      .character-card > tbody > tr,
+      .character-card > tbody > tr > td {
+        display: block;
+        width: 100% !important;
+      }
+
+      .sidebar {
+        width: auto;
+      }
+
+      .portrait {
+        width: 100%;
+        max-width: 280px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="modal" id="spyModal">
-    <div class="modal-card">
-      <div class="modal-top">IIWB Security Suite 2008 - Spy Detector Verification</div>
+    <div class="modal-box">
+      <div class="modal-head">SPY DETECTOR v3.102 :: ACCESS CHECK</div>
       <div class="modal-body">
-        <p><strong>WARNING:</strong> Before entering the IIWB WIKI, you must prove that you are <u>not a spy</u>, <u>not a suspicious noob</u>, and <u>not secretly working for the snack-stealing department</u>.</p>
-        <div class="detector-bar"><div class="detector-fill"></div></div>
-        <div class="checklist">
-          <label><input type="checkbox" id="humanCheck"> I am not a spy.</label>
-          <label><input type="checkbox" id="colaCheck"> I will not steal Albert's Bloxy Cola stock.</label>
-          <label><input type="checkbox" id="reactorCheck"> I promise not to press random reactor buttons for fun.</label>
+        <p><b>WARNING:</b> This archive contains highly classified IIWB materials, reactor rumors, secret mine gossip, and important Bloxy Cola economics.</p>
+
+        <div class="spy-art-row">
+          <img src="./IIWB%20LOGO.png" alt="IIWB logo">
+          <img src="https://img.sanishtech.com/u/6d5083667a8f1bcb4514b7df06791e2b.png" alt="spy detector logo" onerror="this.style.display='none'">
+          <img src="./IIWB%20LOGO.png" alt="IIWB logo 2">
         </div>
-        <div class="detector-result" id="resultText">Current result: highly suspicious until proven funny.</div>
-        <div style="margin-top:8px;font-size:12px;color:#003d7a;"><strong>Tip:</strong> Check every box, then click <em>Verify Innocence</em>.</div>
-        <div class="secret" id="secretText">Spy Detector result accepted. Access granted to the Totally Reliable IIWB Archives.</div>
+
+        <div class="scan-line-box">
+          <div class="scan-label">Checking visitor honesty...</div>
+          <div class="bar-wrap"><div class="bar"></div></div>
+          <div class="scan-label">Scanning for secret asset stealing plans...</div>
+          <div class="bar-wrap"><div class="bar two"></div></div>
+          <div class="scan-label">Comparing face with suspicious noob database...</div>
+          <div class="bar-wrap"><div class="bar three"></div></div>
+        </div>
+
+        <div class="check-row">
+          <label><input type="checkbox" id="notSpy"> I confirm that I am NOT a spy, NOT a mole, and NOT a suspicious intern.</label>
+        </div>
+
+        <div class="check-row">
+          <label><input type="checkbox" id="stealAssets"> Yes, I want to steal assets and behave suspiciously.</label>
+        </div>
+
         <div class="modal-buttons">
-          <button type="button" id="denyBtn">Admit I Am A Spy</button>
-          <button type="button" id="verifyBtn">Verify Innocence</button>
+          <button class="retro-btn" id="passBtn">ENTER WIKI</button>
+          <button class="retro-btn" id="closeBtn">RUN AWAY</button>
         </div>
+
+        <div class="status" id="statusBox">Status: waiting for trustworthy visitor response...</div>
+        <div class="small-note">Funny April Fools popup only. If you confess to stealing assets, the system will send you to the Ban Room.</div>
       </div>
     </div>
   </div>
 
-  <div class="floating-gif blink">! HOT GOSSIP INSIDE !</div>
-
   <div class="page">
-    <div class="topbar">
-      BEST VIEWED IN 1024x768 • INTERNET EXPLORER ENERGY • LAST UPDATED: APRIL 1, 2008-ish • <span class="blink">SUPER OFFICIAL</span>
-    </div>
+    <div class="top-strip">OFFICIAL IIWB WIKI ARCHIVE :: BEST VIEWED WITH EXTREME TRUSTWORTHINESS :: NO SPIES ALLOWED</div>
 
     <div class="header">
       <table class="header-table">
         <tr>
-          <td class="logo-cell">
-            <div class="logo-box">
-              <img src="assets/logo.png" alt="IIWB WIKI logo" />
+          <td style="width:110px;"><img src="./IIWB%20LOGO.png" alt="IIWB main logo" class="main-logo"></td>
+          <td>
+            <h1 class="site-title">IIWB WIKI</h1>
+            <div class="subtitle">The unofficially official IIWB archive of reactor drama, mine legends, and extremely serious lore.</div>
+            <div class="subtitle"><span class="blink">NEW!</span> Working spy detector added. Visitors are now 37% more trustworthy.</div>
+          </td>
+          <td style="width:100px; text-align:right;"><img src="https://img.sanishtech.com/u/6d5083667a8f1bcb4514b7df06791e2b.png" alt="spy detector seal" class="spy-stamp" onerror="this.src='./IIWB%20LOGO.png'"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#reactor">Reactor</a>
+      <a href="#characters">Characters</a>
+      <a href="#spyfiles">Spy Files</a>
+      <a href="ban.html">Ban Room</a>
+    </div>
+
+    <div class="marquee">
+      <marquee scrollamount="6">WELCOME TO THE IIWB WIKI! THIS SITE IS A JOKE FOR APRIL FOOLS. PLEASE DO NOT PRESS RANDOM REACTOR BUTTONS. OLLIE STILL THINKS EVERY WALL HIDES TREASURE. ALBERT STILL WANTS TO SELL YOU BLOXY COLA.</marquee>
+    </div>
+
+    <div class="content" id="home">
+      <table class="layout">
+        <tr>
+          <td class="sidebar">
+            <div class="box">
+              <div class="box-title">SITE STATUS</div>
+              <div class="box-body">
+                <b>Reactor status:</b> Probably fine<br>
+                <b>Spy level:</b> Medium<br>
+                <b>Bloxy Cola stock:</b> Unstable<br>
+                <b>Mine safety:</b> Questionable<br>
+                <b>Visitor count:</b><br>
+                <div class="counter">003102</div>
+                <div class="stamp">APPROVED BY SPY DETECTOR</div>
+              </div>
+            </div>
+
+            <div class="box">
+              <div class="box-title">LOGO WALL</div>
+              <div class="box-body mini-logo-grid">
+                <img src="./IIWB%20LOGO.png" alt="IIWB logo">
+                <img src="./IIWB%20LOGO.png" alt="IIWB logo">
+                <img src="./IIWB%20LOGO.png" alt="IIWB logo">
+                <img src="./IIWB%20LOGO.png" alt="IIWB logo">
+                <img src="https://img.sanishtech.com/u/6d5083667a8f1bcb4514b7df06791e2b.png" alt="spy seal" onerror="this.src='./IIWB%20LOGO.png'">
+                <img src="https://img.sanishtech.com/u/6d5083667a8f1bcb4514b7df06791e2b.png" alt="spy seal 2" onerror="this.src='./IIWB%20LOGO.png'">
+              </div>
+            </div>
+
+            <div class="box">
+              <div class="box-title">SPY WARNING ART</div>
+              <div class="box-body">
+                <div class="spy-art-row">
+                  <img src="https://img.sanishtech.com/u/6d5083667a8f1bcb4514b7df06791e2b.png" alt="spy art" onerror="this.src='./IIWB%20LOGO.png'">
+                  <img src="./IIWB%20LOGO.png" alt="iiwb symbol">
+                </div>
+                <ul class="fact-list">
+                  <li>If you look suspicious, the site will judge you.</li>
+                  <li>If you admit stealing assets, you go to the Ban Room.</li>
+                  <li>If you are honest, the wiki opens normally.</li>
+                </ul>
+              </div>
             </div>
           </td>
-          <td class="title-cell">
-            <h1 class="site-title">IIWB WIKI</h1>
-            <div class="site-subtitle">Official Totally Serious Encyclopedia of Important Nonsense</div>
-            <div class="stamp">TRUSTED BY 97% OF REACTORS*</div>
+
+          <td class="main">
+            <div class="box">
+              <div class="box-title">WELCOME TO THE FACILITY ARCHIVE</div>
+              <div class="box-body">
+                <table class="hero-table">
+                  <tr>
+                    <td style="width:160px;"><img src="./IIWB%20LOGO.png" alt="IIWB hero logo" class="hero-logo"></td>
+                    <td>
+                      <p><b>IIWB WIKI</b> is the most trustworthy fake archive on the internet. Inside this site you will find totally serious information about the reactor, Classic Mines, suspicious tunnels, and why Albert always seems ready to sell another Bloxy Cola.</p>
+                      <p>This version is designed like an old 2008 fan site on purpose, with bright boxes, bold borders, blinking text, and absolutely too much confidence.</p>
+                      <div class="warning">WARNING: RANDOM BUTTON PRESSING NEAR THE REACTOR MAY RESULT IN LOUD ALARMS, PANIC, AND VERY FAST RUNNING.</div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="box" id="reactor">
+              <div class="box-title">REACTOR PAGE</div>
+              <div class="box-body">
+                <p><b>IIWB Reactor Core</b> is the dramatic heart of the facility. It glows, hums, and makes every hallway feel ten times more important. According to completely reliable rumors, the reactor can sense when somebody touches controls without reading warning signs first.</p>
+                <ul class="fact-list">
+                  <li><b>Main purpose:</b> Produce power, tension, and unforgettable atmosphere.</li>
+                  <li><b>Known behavior:</b> Calm when respected, theatrical when ignored.</li>
+                  <li><b>Emergency advice:</b> Look professional and run toward the nearest safe-looking door.</li>
+                  <li><b>Popular myth:</b> Calling it the “blue microwave” will make engineers angry.</li>
+                </ul>
+                <div class="warning">TOP SECRET: During meltdowns, alarms become emotional and everybody suddenly discovers they can sprint.</div>
+              </div>
+            </div>
+
+            <div class="box" id="characters">
+              <div class="box-title">CHARACTER RECORDS</div>
+              <div class="box-body">
+                <table class="character-card">
+                  <tr>
+                    <td colspan="2" class="head">OLLIE :: CLASSIC MINES LEGEND</td>
+                  </tr>
+                  <tr>
+                    <td style="width:210px;"><img src="assets/ollie.png" alt="Ollie" class="portrait"></td>
+                    <td>
+                      <p><b>Ollie</b> is the famous mine explorer connected with <b>Classic Mines</b>. He has the rare ability to look at a dark tunnel and say “this seems fine” before walking directly into danger.</p>
+                      <ul class="fact-list">
+                        <li><b>Known for:</b> Helmet confidence and suspicious levels of bravery.</li>
+                        <li><b>Famous habit:</b> Assuming every weird wall hides treasure.</li>
+                        <li><b>Lore energy:</b> Very high.</li>
+                        <li><b>Relationship:</b> Brother of Albert.</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+
+                <table class="character-card">
+                  <tr>
+                    <td colspan="2" class="head">ALBERT :: SEA JOURNEY BLOXY COLA MERCHANT</td>
+                  </tr>
+                  <tr>
+                    <td style="width:210px;"><img src="assets/albert.png" alt="Albert" class="portrait"></td>
+                    <td>
+                      <p><b>Albert</b> is remembered as the trusted Bloxy Cola seller from <b>Sea Journey</b>. His business model is very simple: appear near the sea, look extremely confident, and convince everyone that fizzy drinks are essential survival equipment.</p>
+                      <ul class="fact-list">
+                        <li><b>Occupation:</b> Merchant, refreshment strategist, maritime salesman.</li>
+                        <li><b>Best skill:</b> Appearing exactly when someone wants a Bloxy Cola.</li>
+                        <li><b>Family connection:</b> Brother of Ollie.</li>
+                        <li><b>Professional opinion:</b> “One more Bloxy Cola is always a good idea.”</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="box" id="spyfiles">
+              <div class="box-title">SPY FILES / CLASSIFIED NONSENSE</div>
+              <div class="box-body">
+                <p>Because this is an April Fools site, the archive also includes several very important spy-related discoveries:</p>
+                <ul class="fact-list">
+                  <li>The facility may contain at least 4 suspicious hallways and 1 hallway that just looks dramatic for no reason.</li>
+                  <li>The Spy Detector is believed to be powered by old forum code and pure judgment.</li>
+                  <li>Some visitors deny being spies too quickly. This is statistically hilarious.</li>
+                  <li>Any visitor who openly admits to stealing assets gets sent to the <a href="ban.html">Ban Room</a>.</li>
+                  <li>The second logo exists to make the site feel even more like an old mysterious wiki.</li>
+                </ul>
+
+                <div class="spy-art-row">
+                  <img src="./IIWB%20LOGO.png" alt="logo">
+                  <img src="https://img.sanishtech.com/u/6d5083667a8f1bcb4514b7df06791e2b.png" alt="spy stamp" onerror="this.src='./IIWB%20LOGO.png'">
+                  <img src="./IIWB%20LOGO.png" alt="logo again">
+                  <img src="https://img.sanishtech.com/u/6d5083667a8f1bcb4514b7df06791e2b.png" alt="spy stamp 2" onerror="this.src='./IIWB%20LOGO.png'">
+                </div>
+              </div>
+            </div>
           </td>
         </tr>
       </table>
     </div>
 
-    <div class="marquee-bar">
-      <marquee behavior="scroll" direction="left" scrollamount="5">BREAKING NEWS: Reactor remains dramatic • Ollie still appears in Classic Mines and acts like this is normal • Albert allegedly sold one Bloxy Cola every 3.2 seconds • Spy Detector upgraded from suspicious to slightly less suspicious •</marquee>
-    </div>
-
-    <div class="nav">
-      <a href="#home">Home</a>
-      <a href="#reactor">Reactor</a>
-      <a href="#ollie">Ollie</a>
-      <a href="#albert">Albert</a>
-    </div>
-
-    <div class="layout">
-      <div class="sidebar">
-        <div class="box">
-          <div class="box-title">Visitor Counter</div>
-          <div class="box-body center">
-            <div class="mini-counter" id="counter">003102</div>
-            <div style="margin-top:8px;">real visitors, fake science</div>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="box-title">Site Status</div>
-          <div class="box-body">
-            <div class="badge-row">
-              <span class="badge">REACTOR: MOODY</span>
-              <span class="badge">SPY ALERT: MEDIUM</span>
-              <span class="badge">COLA: IN STOCK</span>
-              <span class="badge">WIKI: LOUD</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="box-title">Quick Facts</div>
-          <div class="box-body">
-            <ul>
-              <li>IIWB is 12% lore and 88% dramatic confidence.</li>
-              <li>Noob-level explanations may occur at any time.</li>
-              <li>This wiki is powered by mystery and old gradients.</li>
-              <li>Every article has been reviewed by absolutely nobody.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="box-title">Official Buttons</div>
-          <div class="box-body center">
-            <img alt="fake web button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23002255'/><rect x='1' y='1' width='86' height='29' fill='%23004499' stroke='white'/><text x='44' y='20' font-size='12' text-anchor='middle' fill='white' font-family='Verdana'>IIWB WIKI</text></svg>' />
-            <img alt="fake web button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23550000'/><rect x='1' y='1' width='86' height='29' fill='%23b80000' stroke='%23fff59d'/><text x='44' y='20' font-size='12' text-anchor='middle' fill='%23fff59d' font-family='Verdana'>NO SPIES</text></svg>' />
-            <img alt="fake web button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23004400'/><rect x='1' y='1' width='86' height='29' fill='%2300a050' stroke='white'/><text x='44' y='20' font-size='11' text-anchor='middle' fill='white' font-family='Verdana'>BLOXY COLA</text></svg>' />
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="box-title">Image Note</div>
-          <div class="box-body">
-            Real images are now installed. If you update them later, just replace the files in the <code>assets</code> folder.
-          </div>
-        </div>
-      </div>
-
-      <div class="content">
-        <div class="hero" id="home">
-          <h2>Welcome to the most trustworthy IIWB archive on the internet.</h2>
-          <p>This website has the exact energy of a 2008 fan wiki that somehow survived every redesign trend. It is old, loud, slightly dramatic, and completely ready for April Fools.</p>
-          <p>
-            <a class="old-button" href="#reactor">Read reactor facts</a>
-            <a class="old-button" href="#ollie">Meet Ollie</a>
-            <a class="old-button" href="#albert">Meet Albert</a>
-          </p>
-          <div class="warning">Warning: some facts on this page may have been approved by a machine that runs on jokes, blue gradients, and Bloxy Cola.</div>
-        </div>
-
-        <div class="box article" id="reactor">
-          <div class="box-title">Article: The Reactor</div>
-          <div class="box-body">
-            <h3>The Reactor</h3>
-            <div class="meta">Category: Important glowing machinery • Status: dramatic • Danger level: yes</div>
-            <p>The reactor is the beating, blinking, overreacting heart of the IIWB experience. It does not simply <em>exist</em>. It performs. Sometimes it glows like a proud science project, and sometimes it behaves like it just read terrible news.</p>
-            <div class="quote">"The reactor is perfectly safe," said somebody, moments before it started making a very concerning noise.</div>
-            <p>According to highly reliable hallway rumors, the reactor can sense three things: nearby chaos, bad engineering decisions, and people who say "what does this button do?" with too much confidence.</p>
-            <table class="stats-table">
-              <tr><th>Property</th><th>Official value</th></tr>
-              <tr><td>Power source</td><td>Science, panic, and suspiciously bright lights</td></tr>
-              <tr><td>Main hobby</td><td>Looking cool while worrying everyone</td></tr>
-              <tr><td>Biggest weakness</td><td>Random interns and curiosity</td></tr>
-              <tr><td>Common symptom</td><td>Making players feel like something important is about to happen</td></tr>
-            </table>
-          </div>
-        </div>
-
-        <div class="box article" id="ollie">
-          <div class="box-title">Article: Ollie</div>
-          <div class="box-body">
-            <img class="portrait" src="assets/ollie.png" alt="Ollie portrait" />
-            <h3>Ollie</h3>
-            <div class="meta">Category: Character • Known from: Classic Mines</div>
-            <p>Ollie is the kind of character who appears in <strong>Classic Mines</strong> and instantly gives the impression that he knows exactly where all the trouble is hidden. Whether he is exploring, surviving, or just standing there like a legend, he brings classic energy to the scene.</p>
-            <p>His public image can best be described as: "calm on the outside, probably hearing cave noises on the inside." Fans believe he is either extremely brave or simply too used to the weirdness.</p>
-            <table class="char-table">
-              <tr><th>Trait</th><th>Description</th></tr>
-              <tr><td>Vibe</td><td>Classic adventure with a side of mystery</td></tr>
-              <tr><td>Best known for</td><td>Showing up in Classic Mines like the cave personally invited him</td></tr>
-              <tr><td>Rumored skill</td><td>Knowing the difference between normal rocks and story-important rocks</td></tr>
-            </table>
-          </div>
-        </div>
-
-        <div class="box article" id="albert">
-          <div class="box-title">Article: Albert</div>
-          <div class="box-body">
-            <img class="portrait" src="assets/albert.png" alt="Albert portrait" />
-            <h3>Albert</h3>
-            <div class="meta">Category: Character • Known from: Sea Journey • Side business: Bloxy Cola distribution</div>
-            <p>Albert is the iconic Bloxy Cola seller from <strong>Sea Journey</strong> and the brother of Ollie. While some characters seek adventure, Albert seeks customers, stock efficiency, and maximum cola-based happiness.</p>
-            <p>He has the energy of a man who could sell a cold drink during a storm and somehow make it sound like a premium lifestyle upgrade. If you hear a cheerful sales pitch near the sea, there is a strong chance Albert is nearby.</p>
-            <div class="quote">"One Bloxy Cola for you, one Bloxy Cola for the journey, and one emergency Bloxy Cola just in case." - Albert, definitely</div>
-            <p>Many believe Albert's true superpower is running a refreshment business in locations where the weather, the map, and common sense all try to say no.</p>
-          </div>
-        </div>
-
-        <div class="box">
-          <div class="box-title">Rumor Board</div>
-          <div class="box-body">
-            <ul>
-              <li>The reactor once judged a player silently.</li>
-              <li>Albert has a secret premium cola speech for VIP customers.</li>
-              <li>Ollie has looked at one rock in Classic Mines for so long that people assume it matters.</li>
-              <li>The Spy Detector secretly runs on panic and old internet graphics.</li>
-            </ul>
-            <div class="under-construction blink">UNDER CONSTRUCTION • MORE VERY IMPORTANT LORE COMING SOON • UNDER CONSTRUCTION</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="footer">
-      <div>IIWB WIKI © 2008-forever • This site is a joke project for April Fools and should not be used as legal reactor guidance.</div>
-      <div style="margin-top:8px;">
-        <img alt="button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23004c93'/><rect x='1' y='1' width='86' height='29' fill='%230066cc' stroke='white'/><text x='44' y='20' font-size='11' text-anchor='middle' fill='white' font-family='Verdana'>OLD WEB</text></svg>' />
-        <img alt="button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23660000'/><rect x='1' y='1' width='86' height='29' fill='%23a80000' stroke='white'/><text x='44' y='20' font-size='11' text-anchor='middle' fill='white' font-family='Verdana'>APRIL FOOLS</text></svg>' />
-        <img alt="button" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='31'><rect width='88' height='31' fill='%23005522'/><rect x='1' y='1' width='86' height='29' fill='%23008a3c' stroke='white'/><text x='44' y='20' font-size='11' text-anchor='middle' fill='white' font-family='Verdana'>SPY CHECK</text></svg>' />
-      </div>
+      <p><b>IIWB WIKI :: APRIL FOOLS EDITION</b></p>
+      <p>This website is intentionally silly and should not be used for real reactor inspections.</p>
+      <p>
+        <img src="./IIWB%20LOGO.png" alt="footer logo 1">
+        <img src="https://img.sanishtech.com/u/6d5083667a8f1bcb4514b7df06791e2b.png" alt="footer spy logo" onerror="this.src='./IIWB%20LOGO.png'">
+        <img src="./IIWB%20LOGO.png" alt="footer logo 2">
+      </p>
     </div>
   </div>
 
-    <script>
-    const modal = document.getElementById('spyModal');
-    const verifyBtn = document.getElementById('verifyBtn');
-    const denyBtn = document.getElementById('denyBtn');
-    const resultText = document.getElementById('resultText');
-    const secretText = document.getElementById('secretText');
-    const humanCheck = document.getElementById('humanCheck');
-    const colaCheck = document.getElementById('colaCheck');
-    const reactorCheck = document.getElementById('reactorCheck');
-    const counter = document.getElementById('counter');
-    const checks = [humanCheck, colaCheck, reactorCheck];
+  <script>
+    (function () {
+      var modal = document.getElementById('spyModal');
+      var passBtn = document.getElementById('passBtn');
+      var closeBtn = document.getElementById('closeBtn');
+      var notSpy = document.getElementById('notSpy');
+      var stealAssets = document.getElementById('stealAssets');
+      var statusBox = document.getElementById('statusBox');
 
-    document.body.classList.add('modal-open');
+      document.body.style.overflow = 'hidden';
 
-    function randomCount() {
-      const base = 3102 + Math.floor(Math.random() * 700);
-      counter.textContent = String(base).padStart(6, '0');
-    }
-    randomCount();
+      passBtn.addEventListener('click', function () {
+        if (stealAssets.checked) {
+          statusBox.textContent = 'Status: suspicious confession detected. Redirecting to Ban Room...';
+          statusBox.style.color = '#8b0000';
+          statusBox.style.borderColor = '#c50000';
+          setTimeout(function () {
+            window.location.href = 'ban.html';
+          }, 700);
+          return;
+        }
 
-    function checkedCount() {
-      return checks.filter(el => el.checked).length;
-    }
+        if (!notSpy.checked) {
+          statusBox.textContent = 'Status: access denied. Please confirm that you are not a spy.';
+          statusBox.style.color = '#8b0000';
+          statusBox.style.borderColor = '#c50000';
+          return;
+        }
 
-    function updateResult() {
-      const checked = checkedCount();
-      resultText.classList.remove('ok');
-      if (checked === 0) {
-        resultText.textContent = 'Current result: highly suspicious until proven funny.';
-      } else if (checked < 3) {
-        resultText.textContent = 'Current result: partial innocence detected. Continue proving your loyalty.';
-      } else {
-        resultText.textContent = 'Current result: spy levels reduced to acceptable joke standards.';
-        resultText.classList.add('ok');
-      }
-    }
+        statusBox.textContent = 'Status: trust level accepted. Opening IIWB WIKI...';
+        statusBox.style.color = '#0f5f0f';
+        statusBox.style.borderColor = '#2f8d2f';
 
-    checks.forEach(el => el.addEventListener('change', updateResult));
-    updateResult();
+        setTimeout(function () {
+          modal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }, 500);
+      });
 
-    function closeModal() {
-      modal.classList.add('hidden');
-      document.body.classList.remove('modal-open');
-    }
-
-    verifyBtn.addEventListener('click', function () {
-      if (checkedCount() === 3) {
-        secretText.style.display = 'block';
-        resultText.textContent = 'Access approved. The detector believes you are probably harmless.';
-        resultText.classList.add('ok');
-        window.setTimeout(closeModal, 1100);
-      } else {
-        secretText.style.display = 'none';
-        resultText.textContent = 'Verification failed. The detector still suspects you of extremely spy-like behavior.';
-        resultText.classList.remove('ok');
-      }
-    });
-
-    denyBtn.addEventListener('click', function () {
-      resultText.textContent = 'Confession recorded. Please reconsider your life choices and try again.';
-      resultText.classList.remove('ok');
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter' && !modal.classList.contains('hidden')) {
-        verifyBtn.click();
-      }
-    });
+      closeBtn.addEventListener('click', function () {
+        window.location.href = 'ban.html';
+      });
+    })();
   </script>
 </body>
 </html>
